@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.lazycomposable.component.TextCellRandomSize
+import com.example.myapplication.component.TextCellRandomSize
 
 @Composable
 fun TextLazyVerticalStaggeredGrid(dataList: List<String>, modifier: Modifier = Modifier) {

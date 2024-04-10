@@ -11,7 +11,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.lazycomposable.component.TextCell
+import com.example.myapplication.component.TextCell
 
 @Composable
 fun TextLazyRow(dataList: MutableList<String>, modifier: Modifier = Modifier) {

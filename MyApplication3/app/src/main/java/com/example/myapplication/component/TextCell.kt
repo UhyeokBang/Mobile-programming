@@ -1,4 +1,4 @@
-package com.example.lazycomposable.component
+package com.example.myapplication.component
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
