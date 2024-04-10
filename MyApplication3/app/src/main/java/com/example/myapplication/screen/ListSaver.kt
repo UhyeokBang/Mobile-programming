@@ -1,4 +1,4 @@
-package com.example.lazycomposable.screen
+package com.example.myapplication.screen
 
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.saveable.Saver

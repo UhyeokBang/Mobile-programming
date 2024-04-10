@@ -11,6 +11,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.myapplication.screen.MainSceen1
+import com.example.myapplication.screen.MainSceen4
+import com.example.myapplication.screen.MainScreen3
+import com.example.myapplication.screen.MainScreen3
 import com.example.myapplication.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
@@ -23,7 +26,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainSceen1()
+                    MainSceen4()
                 }
             }
         }

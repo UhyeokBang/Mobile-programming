@@ -1,4 +1,4 @@
-package com.example.lazycomposable.screen
+package com.example.myapplication.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -6,10 +6,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
-import com.example.lazycomposable.component.TextLazyColumnSwipeToDismiss
+import com.example.myapplication.component.TextLazyColumnSwipeToDismiss
 
 @Composable
-fun MainSceen3() {
+fun MainScreen3() {
     var dataList= rememberSaveable(saver = listSaver) { mutableStateListOf<String>() }
 
     if (dataList.isEmpty()) {

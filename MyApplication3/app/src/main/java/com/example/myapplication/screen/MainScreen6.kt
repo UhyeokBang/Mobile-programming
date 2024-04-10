@@ -1,4 +1,4 @@
-package com.example.lazycomposable.screen
+package com.example.myapplication.screen
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,7 +8,7 @@ import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.lazycomposable.component.TextLazyVerticalStaggeredGrid
+import com.example.myapplication.component.TextLazyVerticalStaggeredGrid
 
 @Composable
 fun MainSceen6() {

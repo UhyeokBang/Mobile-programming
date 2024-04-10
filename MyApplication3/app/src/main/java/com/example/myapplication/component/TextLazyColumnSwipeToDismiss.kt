@@ -1,4 +1,4 @@
-package com.example.lazycomposable.component
+package com.example.myapplication.component
 
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.background
@@ -27,6 +27,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.lazycomposable.component.TextCell
 import kotlinx.coroutines.launch
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -51,8 +52,8 @@ fun TextLazyColumnSwipeToDismiss(dataList: MutableList<String>, modifier: Modifi
         ) {
             itemsIndexed(
                 items = dataList,
-                key = { index, item -> item.hashCode() }
-            ) { index, item ->
+                key = { _, item -> item.hashCode() }
+            ) { _, item ->
                 val state = rememberDismissState(
                     confirmValueChange = {
                         if (it == DismissValue.DismissedToStart) {
