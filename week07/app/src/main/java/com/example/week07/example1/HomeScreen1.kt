@@ -25,7 +25,9 @@ fun HomeScreen1(navController: NavHostController) {
         )
 
         Button(onClick = {
-            navController.navigate("A")
+            navController.navigate("A"){
+                launchSingleTop = true
+            }
         }){
             Text(text="Screen A")
         }

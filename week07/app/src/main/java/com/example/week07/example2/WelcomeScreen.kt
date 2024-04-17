@@ -1,9 +1,8 @@
-package com.example.week07.example1
+package com.example.week07.example2
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -13,23 +12,21 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 
 @Composable
-fun ScreenC1(navController: NavHostController) {
+fun WelcomeScreen(navController: NavHostController, userID: String?) {
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
+        horizontalAlignment = Alignment.CenterHorizontally) {
+
         Text(
-            text="Screen C",
+            text = "Welcome Screen",
             fontSize = 40.sp,
             fontWeight = FontWeight.ExtraBold
         )
 
-        Button(onClick = {
-            navController.navigate("Home"){
-                popUpTo("Home"){inclusive = true}
-            }
-        }){
-            Text(text = "Go to Home Screen")
-        }
+        Text(
+            text = "${userID}님 환영합니다.",
+            fontSize = 20.sp,
+            fontWeight = FontWeight.ExtraBold
+        )
     }
 }
