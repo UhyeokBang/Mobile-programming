@@ -113,6 +113,7 @@ fun eval(e: Expr): Double = when (e) {
     is Expr.Const -> e.value
     is Expr.Sum -> eval(e.right) + eval(e.left)
     Expr.NotANumber -> java.lang.Double.NaN
+    else -> {1.0}
 }
 
 fun dataClassTest(){
