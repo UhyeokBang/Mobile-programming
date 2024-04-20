@@ -26,7 +26,7 @@ fun LoginNavGraph(navController: NavHostController) {
             arguments = listOf(
                 navArgument(name = "userID") {
                     type = NavType.StringType
-                    defaultValue = "user"
+                    defaultValue = "'user'"
                 }
             )
         ) {
