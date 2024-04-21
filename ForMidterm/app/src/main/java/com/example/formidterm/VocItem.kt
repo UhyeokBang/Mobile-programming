@@ -22,6 +22,7 @@ import com.example.week06.ui.theme.Week06Theme
 @Composable
 fun VocItem(vocData: VocData, onItemClick : () -> Unit) {
     ElevatedCard(
+        //그림자 효과
         elevation = CardDefaults.cardElevation(defaultElevation = 8.dp),
         modifier = Modifier
             .padding(8.dp)

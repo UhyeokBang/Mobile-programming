@@ -1,7 +1,10 @@
 package com.example.formidterm
 
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import java.util.Scanner
 
 //자료형
@@ -17,6 +20,10 @@ val foods2 = listOf("라면", "갈비", "밥")
 //변경 가능한 List
 val r_foods: MutableList<String> = mutableListOf("라면", "갈비", "밥")
 val r_foods2 = mutableListOf("라면", "갈비", "밥")
+
+//remember 선언
+val count = remember { mutableStateOf(0) }
+var isEarsVisible by rememberSaveable { mutableStateOf(true) }
 
 //List 조작
 fun ListEdit() {
