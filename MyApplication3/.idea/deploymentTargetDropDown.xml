@@ -5,6 +5,18 @@
       <entry key="MainActivity">
         <State />
       </entry>
+      <entry key="RandomColorButtonPreview">
+        <State />
+      </entry>
+      <entry key="TextLazyGridPreview">
+        <State />
+      </entry>
+      <entry key="TextLazyRowPreview">
+        <State />
+      </entry>
+      <entry key="TextLazyVerticalStaggeredGridPreview">
+        <State />
+      </entry>
       <entry key="app">
         <State />
       </entry>

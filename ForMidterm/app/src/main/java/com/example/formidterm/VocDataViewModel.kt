@@ -6,6 +6,9 @@ import androidx.lifecycle.AndroidViewModel
 import com.example.formidterm.R
 import java.util.Scanner
 
+//viewModel은 val vocDataViewModel: VocDataViewModel = viewModel() 이런식으로 선언하면
+//걍 알아서 자동으로 알잘딱 VocDataViewModel 로 들어감
+example1
 class VocDataViewModel(private val application: Application) : AndroidViewModel(application) {
 
     var vocList = mutableStateListOf<VocData>()
