@@ -72,11 +72,11 @@ fun highOderFunction3(func: () -> Unit): () -> Unit {
 }
 
 //class 선언
-class Person (val name:String="noInfo"
-              ,
-              val addr:String="noInfo"
-              ,
-              val tel:String="noInfo"){
+class Person(
+    val name: String = "noInfo",
+    val addr: String = "noInfo",
+    val tel: String = "noInfo"
+) {
 }
 
 //인스턴스 생성

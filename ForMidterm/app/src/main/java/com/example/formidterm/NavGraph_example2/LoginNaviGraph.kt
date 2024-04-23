@@ -23,30 +23,23 @@ fun LoginNavGraph(navController: NavHostController) {
         }
 
         composable(route = Routes.Welcome.route + "?userid={userID}",
-            arguments = listOf(
-                navArgument(name = "userID") {
-                    type = NavType.StringType
-                    defaultValue = "'user'"
-                }
-            )
-        ) {
+            arguments = listOf(navArgument(name = "userID") {
+                type = NavType.StringType
+                defaultValue = "'user'"
+            })) {
             WelcomeScreen(
-                navController,
-                it.arguments?.getString("userID")
+                navController, it.arguments?.getString("userID")
             )
         }
 
         composable(route = Routes.Register.route + "?userID={userID}&userPasswd={userPasswd}",
-            arguments = listOf(
-                navArgument(name = "userID") {
-                    type = NavType.StringType
-                    defaultValue = "user"
-                },
-                navArgument(name = "userPasswd") {
-                    type = NavType.StringType
-                    nullable = true;
-                }
-            )) {
+            arguments = listOf(navArgument(name = "userID") {
+                type = NavType.StringType
+                defaultValue = "user"
+            }, navArgument(name = "userPasswd") {
+                type = NavType.StringType
+                nullable = true;
+            })) {
             Register(
                 navController = navController,
                 userID = it.arguments?.getString("userID"),
