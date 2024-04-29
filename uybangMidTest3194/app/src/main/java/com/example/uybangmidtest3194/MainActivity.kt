@@ -1,4 +1,4 @@
-package com.example.week07
+package com.example.uybangmidtest3194
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,25 +6,41 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import com.example.week07.example4.ScaffoldEample
-import com.example.week07.ui.theme.Week07Theme
+import androidx.compose.ui.tooling.preview.Preview
+import com.example.uybangmidtest3194.ui.theme.UybangMidTest3194Theme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            Week07Theme {
+            UybangMidTest3194Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-//                    val navController = rememberNavController()
-//                    LoginNavGraph(navController)
-                    ScaffoldEample()
+                    MainScreen()
                 }
             }
         }
+    }
+}
+
+@Composable
+fun Greeting(name: String, modifier: Modifier = Modifier) {
+    Text(
+        text = "Hello $name!",
+        modifier = modifier
+    )
+}
+
+@Preview(showBackground = true)
+@Composable
+fun GreetingPreview() {
+    UybangMidTest3194Theme {
+        Greeting("Android")
     }
 }
