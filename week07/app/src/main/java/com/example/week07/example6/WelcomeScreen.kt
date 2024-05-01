@@ -40,10 +40,20 @@ fun WelcomeScreen(navController: NavHostController) {
             navViewModel.loginStatus.value = true
             navController.navigate(Routes.Main.route)
         }
+        if(navViewModel.loginStatus.value){
+            navController.navigate(Routes.Main.route){
+                popUpTo(Routes.Login.route){
+                    inclusive = true
+                }
+                launchSingleTop = true
+            }
+        }
 //        Button(onClick = {
 //            navViewModel.loginStatus.value = true
-//            
-//
+//            coroutineScope.launch {
+//                delay(2000)
+//                navController.navigate(Routes.Main.route)
+//            }
 //        }) {
 //            Text("메인화면")
 //        }
