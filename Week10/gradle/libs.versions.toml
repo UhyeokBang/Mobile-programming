@@ -11,6 +11,7 @@ composeBom = "2023.08.00"
 coil = "3.0.0-alpha06"
 coilVersion = "2.6.0"
 coilCompose = "3.0.0-alpha06"
+accompanistPermissions = "0.35.0-alpha"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -30,6 +31,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3" 
 coil = { group = "io.coil-kt.coil3", name = "coil", version.ref = "coil" }
 coil-kt-coil = { group = "io.coil-kt", name = "coil", version.ref = "coilVersion" }
 coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coilCompose" }
+accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanistPermissions" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

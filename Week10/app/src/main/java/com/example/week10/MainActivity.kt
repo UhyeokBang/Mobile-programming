@@ -23,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     color = MaterialTheme.colorScheme.background
                 ) {
                     val apps = getInstalledApps()
-                    InstalledAppsList(apps)
+                    NotificationApp()
                 }
             }
         }
