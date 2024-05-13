@@ -10,6 +10,9 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
+import com.example.week10.example1.MainScreen
+import com.example.week10.example1.NavGraph
 import com.example.week10.ui.theme.Week10Theme
 
 class MainActivity : ComponentActivity() {
@@ -22,8 +25,8 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    val apps = getInstalledApps()
-                    NotificationApp()
+                    val navController = rememberNavController()
+                    NavGraph(navController)
                 }
             }
         }
