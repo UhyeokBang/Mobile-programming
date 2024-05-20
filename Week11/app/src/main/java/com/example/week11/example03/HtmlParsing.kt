@@ -14,29 +14,29 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 @OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun MainScreen03(newsViewModel: NewsViewModel = viewModel(), url: String) {
-//    val isLoading = newsViewModel.isLoading.value
-//    val newsList = newsViewModel.newsList.value
-//    val pullRefreshState = rememberPullRefreshState( //material 최신 버전 추가
-//        refreshing = isLoading,
-//        onRefresh = { newsViewModel.fetchNews(url) })
-//
-//    LaunchedEffect(url) {
-//        newsViewModel.fetchNews(url)
-//    }
-//
-//    Box (modifier = Modifier
-//        .pullRefresh(pullRefreshState)
-//    ){
-//        NewsList(list = newsList)
-//        PullRefreshIndicator(
-//            refreshing = newsViewModel.isLoading.value,
-//            state = pullRefreshState,
-//            modifier = Modifier.align(Alignment.TopCenter)
-//        )
-//    }
-    val newsList:List<NewsData> = newsViewModel.newsList.value
-    LaunchedEffect(key1 = url) {
+    val isLoading = newsViewModel.isLoading.value
+    val newsList = newsViewModel.newsList.value
+    val pullRefreshState = rememberPullRefreshState( //material 최신 버전 추가
+        refreshing = isLoading,
+        onRefresh = { newsViewModel.fetchNews(url) })
+
+    LaunchedEffect(url) {
         newsViewModel.fetchNews(url)
     }
-    NewsList(list = newsList)
+
+    Box (modifier = Modifier
+        .pullRefresh(pullRefreshState)
+    ){
+        NewsList(list = newsList)
+        PullRefreshIndicator(
+            refreshing = newsViewModel.isLoading.value,
+            state = pullRefreshState,
+            modifier = Modifier.align(Alignment.TopCenter)
+        )
+    }
+//    val newsList:List<NewsData> = newsViewModel.newsList.value
+//    LaunchedEffect(key1 = url) {
+//        newsViewModel.fetchNews(url)
+//    }
+//    NewsList(list = newsList)
 }

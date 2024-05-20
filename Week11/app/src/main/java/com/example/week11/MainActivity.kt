@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.week11.example02.FetchWebPage
 import com.example.week11.example03.MainScreen03
+import com.example.week11.example04.MainScreen04
 import com.example.week11.ui.theme.Week11Theme
 
 class MainActivity : ComponentActivity() {
@@ -24,7 +25,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainScreen03(url = "https://news.daum.net/")
+                    MainScreen04()
                 }
             }
         }
