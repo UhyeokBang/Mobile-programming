@@ -3,14 +3,27 @@ package com.example.week12
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.platform.LocalContext
+import androidx.lifecycle.viewmodel.compose.viewModel
+import com.example.week12.roomDB.Item
+import com.example.week12.roomDB.ItemDatabase
+import com.example.week12.screen.InputScreen
+import com.example.week12.screen.ItemList
 import com.example.week12.ui.theme.Week12Theme
+import com.example.week12.viemodel.Repository
+import com.example.week12.viewmodel.ItemViewModel
+import com.example.week12.viewmodel.ItemViewModelFactory
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,7 +35,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting("Android")
+                    MainScreen()
                 }
             }
         }
@@ -30,17 +43,20 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
-    Text(
-        text = "Hello $name!",
-        modifier = modifier
-    )
-}
+fun MainScreen(){
+    val context = LocalContext.current
+    val itemdb = ItemDatabase.getItemDatabase(context)
+    val viewModel:ItemViewModel = viewModel(factory = ItemViewModelFactory(Repository(itemdb)))
 
-@Preview(showBackground = true)
-@Composable
-fun GreetingPreview() {
-    Week12Theme {
-        Greeting("Android")
+    val itemList by viewModel.itemList.collectAsState(initial = emptyList())
+    var selectedItem by remember {
+        mutableStateOf<Item?>(null)
+    }
+    val selectedEvent = {item:Item -> selectedItem = item}
+
+    Column(modifier = Modifier.fillMaxSize()) {
+        InputScreen(viewModel = viewModel, selectedItem=selectedItem)
+        ItemList(list = itemList, onClick = selectedEvent)
+
     }
 }

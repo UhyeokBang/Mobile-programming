@@ -22,4 +22,6 @@ interface ItemDao {
     @Query("Select * from items")
     fun getAllItems(): Flow<List<Item>>
 
+    @Query("Select * from items where itemName = :itemName")
+    fun FindItem(itemName:String): Flow<List<Item>>
 }
