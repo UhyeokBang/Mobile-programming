@@ -18,5 +18,9 @@ class Repository(private val db:ItemDatabase){
         dao.DeleteItem(item)
     }
 
+    fun FindItem(itemName: String){
+        dao.FindItem("$itemName%")
+    }
+
     fun getAllItems() = dao.getAllItems()
 }

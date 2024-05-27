@@ -26,18 +26,28 @@ class ItemViewModel (private val repository: Repository) : ViewModel(){
     fun InsertItem(item:Item){
         viewModelScope.launch {
             repository.InsertItem(item)
+            getAllItems()
         }
     }
 
     fun UpdateItem(item:Item){
         viewModelScope.launch {
             repository.UpdateItem(item)
+            getAllItems()
         }
     }
 
     fun DeleteItem(item:Item){
         viewModelScope.launch {
             repository.DeleteItem(item)
+            getAllItems()
+        }
+    }
+
+    fun FindItem(itemName:String){
+        viewModelScope.launch {
+            repository.FindItem(itemName)
+            getAllItems()
         }
     }
 
@@ -47,6 +57,7 @@ class ItemViewModel (private val repository: Repository) : ViewModel(){
                 _itemList.value = it
             }
         }
+        getAllItems()
     }
    
 }

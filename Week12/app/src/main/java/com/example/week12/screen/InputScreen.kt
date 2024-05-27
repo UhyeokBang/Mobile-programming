@@ -69,16 +69,16 @@ fun InputScreen(viewModel: ItemViewModel, selectedItem: Item?=null) {
             modifier = Modifier.fillMaxWidth()
         )
         Row {
-            Button(onClick = {  }) {
+            Button(onClick = { viewModel.InsertItem(item); clearText() }) {
                 Text("Insert")
             }
-            Button(onClick = {  }) {
+            Button(onClick = { viewModel.UpdateItem(item); clearText() }) {
                 Text("Update")
             }
-            Button(onClick = {  }) {
+            Button(onClick = { viewModel.DeleteItem(item); clearText() }) {
                 Text("delete")
             }
-            Button(onClick = {  } ) {
+            Button(onClick = { viewModel.FindItem(item.itemName); clearText() } ) {
                 Text("find")
             }
         }
