@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "356022849256",
+    "project_id": "itemdb-fc323",
+    "storage_bucket": "itemdb-fc323.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:356022849256:android:aafa7e72a55826c85ac35d",
+        "android_client_info": {
+          "package_name": "com.example.week13"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD-XG741MnsFC_Opcp9ZRdU1ylrTGUmVbM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
