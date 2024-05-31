@@ -76,12 +76,9 @@ fun InputScreen(viewModel: ItemViewModel, selectedItem: Item?=null) {
             Button(onClick = { viewModel.DeleteItem(item); clearText() }) {
                 Text("delete")
             }
-            Button(onClick = { clearText() } ) {
+            Button(onClick = { viewModel.FindItem(item.itemName); clearText() } ) {
                 Text("find")
             }
-//            Button(onClick = { viewModel.FindItem(item.itemName); clearText() } ) {
-//                Text("find")
-//            }
         }
     }
 }

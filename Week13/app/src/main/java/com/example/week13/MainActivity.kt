@@ -7,7 +7,9 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -38,20 +40,24 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun MainScreen(){
+fun MainScreen() {
     val context = LocalContext.current
     val table = Firebase.database.getReference("Products/items")
-    val viewModel:ItemViewModel = viewModel(factory = ItemViewModelFactory(Repository(table)))
+    val viewModel: ItemViewModel = viewModel(factory = ItemViewModelFactory(Repository(table)))
 
     val itemList by viewModel.itemList.collectAsState(initial = emptyList())
-    var selectedItem by remember {
-        mutableStateOf<Item?>(null)
-    }
-    val selectedEvent = {item:Item -> selectedItem = item}
+    var selectedItem by remember { mutableStateOf<Item?>(null) }
+
+    val selectedEvent = { item: Item -> selectedItem = item }
 
     Column(modifier = Modifier.fillMaxSize()) {
-        InputScreen(viewModel = viewModel, selectedItem=selectedItem)
+        Text(text = "202011300방우혁-firebase")
+        InputScreen(viewModel = viewModel, selectedItem = selectedItem)
         ItemList(list = itemList, onClick = selectedEvent)
+    }
 
+    // Initial data load
+    LaunchedEffect(Unit) {
+        viewModel.getAllItems()
     }
 }

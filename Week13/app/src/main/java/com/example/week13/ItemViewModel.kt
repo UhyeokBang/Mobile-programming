@@ -42,12 +42,13 @@ class ItemViewModel (private val repository: Repository) : ViewModel(){
         }
     }
 
-//    fun FindItem(itemName:String){
-//        viewModelScope.launch {
-//            repository.FindItem(itemName)
-//            getAllItems()
-//        }
-//    }
+    fun FindItem(itemName: String) {
+        viewModelScope.launch {
+            repository.FindItem(itemName).collect {
+                _itemList.value = it
+            }
+        }
+    }
 
     fun getAllItems(){
         viewModelScope.launch {
@@ -55,7 +56,6 @@ class ItemViewModel (private val repository: Repository) : ViewModel(){
                 _itemList.value = it
             }
         }
-        getAllItems()
     }
    
 }
